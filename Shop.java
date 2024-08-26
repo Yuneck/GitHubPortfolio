@@ -238,14 +238,14 @@ public class Shop {
 	}
 	
 // -----CHECK DAY-----
-	static void showDay() {
+	static void checkDay() {
 		System.out.println("\n-----CHECK DAY-----");
 		System.out.println("Current day is: " + currentDay);
 		mainMenu();
 	}
 	
 // -----CHECK MONEY-----	
-	static void showMoney() {
+	static void checkMoney() {
 		System.out.println("\n-----CHECK MONEY-----"); 
 		System.out.println("Current money is: " + currentMoney);
 		mainMenu();
@@ -284,8 +284,8 @@ public class Shop {
 		String mainMenuAnswer = scnr.next();
 		int mainMenuOption = Integer.parseInt(mainMenuAnswer);
             switch (mainMenuOption) {
-                case 1 -> showMoney();
-                case 2 -> showDay();
+                case 1 -> checkMoney();
+                case 2 -> checkDay();
                 case 3 -> newDay();
                 case 4 -> addMoney();
                 case 5 -> checkOrders();
