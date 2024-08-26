@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -41,6 +42,38 @@ public class Shop {
         System.out.println("Product price: " + productPrice);
         }
 	}
+	
+
+//-----ORDER MANAGER-----
+	public static class OrderManager {  
+	private static final OrderManager instance = new OrderManager();
+	private OrderManager(){
+		this.orders = new ArrayList<>();
+		}
+	public static OrderManager getInstance(){
+      return instance;
+   } 
+    private final List<Order> orders;
+ 
+    // Add order to list
+    public void addOrder(Order order) {
+        this.orders.add(order);
+        orderCounter++;
+    }
+    // Deleting order from list
+    public void deleteOrder(Order order) {
+        this.orders.remove(order);
+        orderCounter--;
+    }
+    // Displaying all orders
+    public void displayAllOrders() {
+        System.out.println("All Orders:");
+        for (Order order : orders) {
+            order.displayOrder();
+            System.out.println(); // Dodaje odstęp między zamówieniami
+        }
+    }
+}
 
 //-----CREATE ORDER MANAGER-----
 	public static void createOrderManager() {
