@@ -296,7 +296,7 @@ public class Shop {
             }
 	}
 	
-//=====MAIN VOID=====
+//=====MAIN VOID======
 	public static void main(String[] args) {      	gameStarting = true;
 		currentDay = 1;
 		mainMenu();
