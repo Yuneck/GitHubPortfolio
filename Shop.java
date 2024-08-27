@@ -137,26 +137,34 @@ public class Shop {
    //  mainMenu();
 	}
 		
-// // -----CREATE CUSTOM ORDER-----
-// 	static void createCustomOrder() {
-// 		OrderManager orderManager = 
-//         OrderManager.getInstance();
-//         int orderItemsAmount = (int)(Math.random() * 5) + 1;
-//         int i = 1;
-//         Scanner scnr = new Scanner(System.in);
-// 		String newMoney = scnr.next();
-// 		currentMoney = currentMoney + Integer.parseInt(newMoney);
-// 		System.out.println("\n-----CREATING RANDOM ORDER-----");
-// 		Order randomOrder = new Order(orderCounter + 1, customerName);	
-// 		while(i<=orderItemsAmount){
-// 		      String itemName = new String[]{"Laptop", "Monitor", "Telefon", "Myszka", "Klawiatura"}[(int)(Math.random()*5)];
-// 		      randomOrder.addItem(itemName);
-// 		      i++;
-// 		}   
-//         // Dodawanie zamówienia do sklepu
-//      orderManager.addOrder(randomOrder);
-//    //  mainMenu();
-// 	}
+// -----CREATE CUSTOM ORDER-----
+	static void createCustomOrder() {
+		OrderManager orderManager = 
+        OrderManager.getInstance();
+		Scanner scnr = new Scanner(System.in);
+		Boolean isAddingActive = true;
+		
+		// Setting customer's name
+		System.out.println("\n-----CREATINCUSTOM ORDER-----");
+		System.out.println("Put the customer's name: ");
+		String customerName = scnr.next();
+		//Creating order
+		Order customOrder = new Order(orderCounter + 1, customerName);
+		// Setting order items
+		while(isAddingActive){
+			System.out.println("Put the name of the new item: ");
+			String itemName = scnr.next();
+			customOrder.addItem(itemName);
+			System.out.println("Do you want to put another item: (Y/N)");
+			String newItemAnswer = scnr.next();
+			if(newItemAnswer.equals("N")){
+				isAddingActive = false;
+			}
+		}
+        // Dodawanie zamówienia do sklepu
+     orderManager.addOrder(customOrder);
+     mainMenu();
+	}
 
 // -----DEBUG CREATE RANDOM ORDER-----
 	static void debugCreateOrder() {
@@ -232,6 +240,7 @@ public class Shop {
 		System.out.println("5 - Check Orders");
 		System.out.println("6 - Add Dummy Orders");
 		System.out.println("7 - Add Random Order DEBUG");
+		System.out.println("8 - Add Custom Order DEBUG");
 		
 		@SuppressWarnings("resource")
         Scanner scnr = new Scanner(System.in);
@@ -245,6 +254,7 @@ public class Shop {
                 case 5 -> checkOrders();
                 case 6 -> createDummies();
                 case 7 -> debugCreateOrder();
+				case 8 -> createCustomOrder();
                 default -> {
                 }
             }
