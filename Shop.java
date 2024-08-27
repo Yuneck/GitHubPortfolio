@@ -185,7 +185,7 @@ public class Shop {
 // -----DELETE ORDER-----
 	static void deleteOrders(){
 		OrderManager orderManager = OrderManager.getInstance();
-
+		
 
 	}
 
