@@ -138,13 +138,14 @@ public class Shop {
 	}
 		
 // -----CREATE CUSTOM ORDER-----
-	static void createOrder() {
+	static void createCustomOrder() {
 		OrderManager orderManager = 
         OrderManager.getInstance();
         int orderItemsAmount = (int)(Math.random() * 5) + 1;
         int i = 1;
-        String customerName = new String[] {"Kubica", "Małysz", "Pudzian", "Makłowicz", "Wajda"}[(int)(Math.random()*5)];
-        
+        Scanner scnr = new Scanner(System.in);
+		String newMoney = scnr.next();
+		currentMoney = currentMoney + Integer.parseInt(newMoney);
 		System.out.println("\n-----CREATING RANDOM ORDER-----");
 		Order randomOrder = new Order(orderCounter + 1, customerName);	
 		while(i<=orderItemsAmount){
@@ -223,7 +224,7 @@ public class Shop {
 			System.out.println("Welcome to javaShop!");
 			gameStarting = false;}
 		else{}
-		System.out.println( "\n-----MAIN MENU-----");
+		System.out.println("\n-----MAIN MENU-----");
 		System.out.println("1 - Check Current Money");
 		System.out.println("2 - Check Current Day");
 		System.out.println("3 - New Day");
