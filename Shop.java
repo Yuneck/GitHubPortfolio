@@ -137,26 +137,26 @@ public class Shop {
    //  mainMenu();
 	}
 		
-// -----CREATE CUSTOM ORDER-----
-	static void createCustomOrder() {
-		OrderManager orderManager = 
-        OrderManager.getInstance();
-        int orderItemsAmount = (int)(Math.random() * 5) + 1;
-        int i = 1;
-        Scanner scnr = new Scanner(System.in);
-		String newMoney = scnr.next();
-		currentMoney = currentMoney + Integer.parseInt(newMoney);
-		System.out.println("\n-----CREATING RANDOM ORDER-----");
-		Order randomOrder = new Order(orderCounter + 1, customerName);	
-		while(i<=orderItemsAmount){
-		      String itemName = new String[]{"Laptop", "Monitor", "Telefon", "Myszka", "Klawiatura"}[(int)(Math.random()*5)];
-		      randomOrder.addItem(itemName);
-		      i++;
-		}   
-        // Dodawanie zamówienia do sklepu
-     orderManager.addOrder(randomOrder);
-   //  mainMenu();
-	}
+// // -----CREATE CUSTOM ORDER-----
+// 	static void createCustomOrder() {
+// 		OrderManager orderManager = 
+//         OrderManager.getInstance();
+//         int orderItemsAmount = (int)(Math.random() * 5) + 1;
+//         int i = 1;
+//         Scanner scnr = new Scanner(System.in);
+// 		String newMoney = scnr.next();
+// 		currentMoney = currentMoney + Integer.parseInt(newMoney);
+// 		System.out.println("\n-----CREATING RANDOM ORDER-----");
+// 		Order randomOrder = new Order(orderCounter + 1, customerName);	
+// 		while(i<=orderItemsAmount){
+// 		      String itemName = new String[]{"Laptop", "Monitor", "Telefon", "Myszka", "Klawiatura"}[(int)(Math.random()*5)];
+// 		      randomOrder.addItem(itemName);
+// 		      i++;
+// 		}   
+//         // Dodawanie zamówienia do sklepu
+//      orderManager.addOrder(randomOrder);
+//    //  mainMenu();
+// 	}
 
 // -----DEBUG CREATE RANDOM ORDER-----
 	static void debugCreateOrder() {
@@ -185,7 +185,7 @@ public class Shop {
 		currentDay++;
 		System.out.println("Hello, it's day " + currentDay);
 		while(i<=newOrdersAmount){
-		     createOrder();
+		     createRandomOrder();
 		     i++;
 		     System.out.println(i);}
 		mainMenu();
