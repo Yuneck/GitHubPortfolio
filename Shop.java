@@ -86,8 +86,7 @@ public class Shop {
 	
 // -----CHECK ORDERS-----
 	static void checkOrders() {
-		OrderManager orderManager = 
-        OrderManager.getInstance();
+		OrderManager orderManager = OrderManager.getInstance();
 		System.out.println("\n-----CHECK ORDERS-----");
 		System.out.println("Orders in total: " + orderCounter);
 		orderManager.displayAllOrders();
@@ -96,8 +95,7 @@ public class Shop {
 	
 // -----CREATE DUMMY ORDERS-----
 	static void createDummies() {
-		OrderManager orderManager = 
-        OrderManager.getInstance();
+		OrderManager orderManager = OrderManager.getInstance();
 		System.out.println("\n-----CREATING DUMMY ORDERS-----");
 		Order order1 = new Order(101, "Anna Nowak");
         order1.addItem("Smartphone");
@@ -119,8 +117,7 @@ public class Shop {
 	
 // -----CREATE RANDOM ORDER-----
 	static void createRandomOrder() {
-		OrderManager orderManager = 
-        OrderManager.getInstance();
+		OrderManager orderManager = OrderManager.getInstance();
         int orderItemsAmount = (int)(Math.random() * 5) + 1;
         int i = 1;
         String customerName = new String[] {"Kubica", "Małysz", "Pudzian", "Makłowicz", "Wajda"}[(int)(Math.random()*5)];
@@ -139,8 +136,7 @@ public class Shop {
 		
 // -----CREATE CUSTOM ORDER-----
 	static void createCustomOrder() {
-		OrderManager orderManager = 
-        OrderManager.getInstance();
+		OrderManager orderManager = OrderManager.getInstance();
 		Scanner scnr = new Scanner(System.in);
 		Boolean isAddingActive = true;
 		
@@ -168,8 +164,7 @@ public class Shop {
 
 // -----DEBUG CREATE RANDOM ORDER-----
 	static void debugCreateOrder() {
-		OrderManager orderManager = 
-        OrderManager.getInstance();
+		OrderManager orderManager = OrderManager.getInstance();
         int orderItemsAmount = (int)(Math.random() * 5) + 1;
         int i = 1;
         String customerName = new String[] {"Kubica", "Małysz", "Pudzian", "Makłowicz", "Wajda"}[(int)(Math.random()*5)];
@@ -185,6 +180,16 @@ public class Shop {
      orderManager.addOrder(randomOrder);
      mainMenu();
 	}
+
+
+// -----DELETE ORDER-----
+	static void deleteOrders(){
+		OrderManager orderManager = OrderManager.getInstance();
+
+
+	}
+
+
 // -----NEW DAY-----
 	static void newDay() {
 		int newOrdersAmount = (int)(Math.random() * 5) + 1;
