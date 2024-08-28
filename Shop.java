@@ -200,7 +200,7 @@ public class Shop {
 		while(i<=newOrdersAmount){
 		     createRandomOrder();
 		     i++;
-		     System.out.println(i);}
+		     System.out.println("Current orders amount: " + orderCounter);}
 		mainMenu();
 	}
 	
